@@ -9,8 +9,11 @@ const style = {
 }
 
 function HeavyAsyncWithSkeleton() {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState(true);
     useEffect(() => {
+        if (data) {
+            return;
+        }
         (async () => {
             const { data: result } = await axios.get('/api/heavy');
             setData(result)

@@ -1,8 +1,8 @@
 import React from "react";
 import Navigator from "../components/Navigator";
-// import HeavyDom from "../components/HeavyDom";
+import HeavyDom from "../components/HeavyDom";
 // import HeavyImage from "../components/HeavyImage";
-import HeavyAsyncWithoutSkeleton from "../components/HeavyAsyncWithoutSkeleton";
+// import HeavyAsyncWithoutSkeleton from "../components/HeavyAsyncWithoutSkeleton";
 import HeavyAsyncWithSkeleton from "../components/HeavyAsyncWithSkeleton";
 
 function Heavy() {
@@ -13,6 +13,7 @@ function Heavy() {
             <Navigator />
             {/* <HeavyAsyncWithoutSkeleton /> */}
             <HeavyAsyncWithSkeleton />
+            <HeavyDom />
         </main> 
     )
 }

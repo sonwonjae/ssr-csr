@@ -1,4 +1,3 @@
-import "core-js";
 import React from "react";
 import { hydrateRoot } from "react-dom/client";
 import { loadableReady } from "@loadable/component";

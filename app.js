@@ -3,12 +3,14 @@ const express = require("express");
 const React = require("react");
 const { renderToString } = require("react-dom/server");
 const { ChunkExtractor } = require("@loadable/server");
+const compression = require("compression");
 
 const app = express();
+app.use(compression());
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/dist", express.static(path.join(__dirname, "dist")));
 
-const sleep = async (time = 1000) => {
+const sleep = async (time = 5000) => {
     return await new Promise((res) => {
         setTimeout(() => {
             res();
@@ -41,7 +43,7 @@ const nodeStats = path.resolve(__dirname, "./dist/node/loadable-stats.json");
 const webStats = path.resolve(__dirname, "./dist/web/loadable-stats.json");
 
 app.get("/api/heavy", async (_, res) => {
-    await sleep(2000);
+    await sleep();
 
     res.json({ result: true });
 });
@@ -64,8 +66,9 @@ app.get(["/", "/heavy"], async (req, res) => {
       <!DOCTYPE html>
       <html>
         <head>
-        ${webExtractor.getLinkTags()}
-        ${webExtractor.getStyleTags()}
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            ${webExtractor.getLinkTags()}
+            ${webExtractor.getStyleTags()}
         </head>
         <body>
           <div id="root">${html}</div>
