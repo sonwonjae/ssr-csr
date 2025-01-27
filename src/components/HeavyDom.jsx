@@ -1,10 +1,8 @@
 import React from 'react'
 
-
-
 function HeavyDom() {
     return (
-        <div>
+        <h1>
             Heavy
             <div>
                 Heavy
@@ -5595,7 +5593,7 @@ function HeavyDom() {
                     </div>
                 </div>
             </div>
-        </div>
+        </h1>
     )
 }
 

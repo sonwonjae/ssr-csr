@@ -10,7 +10,7 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/dist", express.static(path.join(__dirname, "dist")));
 
-const sleep = async (time = 5000) => {
+const sleep = async (time = 3000) => {
     return await new Promise((res) => {
         setTimeout(() => {
             res();

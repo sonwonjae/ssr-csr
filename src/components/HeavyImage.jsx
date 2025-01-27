@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-function HeavyImage({ id }) {
+function HeavyImage({ id = 0}) {
 
     return (
         <img src={`/heavy${id}.jpg`} style={{ objectFit: 'cover', width: '100%'}} />
